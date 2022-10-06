@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url(../img/bg.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+img{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    margin: 5px 0;
+    color: #64acfa;
+    transition: all 0.5s;
+}
+a:hover{
+    color: #97c9ff;
+}
+textarea{
+    min-height: 100px;
+}
+#wrapper{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: relative;
+    padding: 30px 0;
+}
+#note_center{
+    width: 70%;
+    margin: 0 auto;
+}
+#menu_left,#info_right{
+    width: 15%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.236);
+    transition: all 0.3s;
+    z-index: 10;
+}
+#menu_left{
+    /* float: left;
+    position: relative; */
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+}
+#menu_left>div{
+    width: 80px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    margin: 10px 10px;
+}
+#menu_left> button{
+    position:absolute;
+    width: 60px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    left:100%;
+}
+#info_right{
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* display: none; */
+    transform: translate(100%,0);
+    transition: all,0.3s;
+}
+#info_right>div{
+    width: 100%;
+    text-align: left;
+    line-height: 40px;
+}
+.note{
+    width: 100%;
+    margin:30px 0;
+    position: relative;
+    transition: all 0.3s;
+}
+.note:hover{
+    box-shadow: 10px 10px 5px #c3c3c3;
+}
+.head{
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+}
+.head_left{
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.head_left >div{ 
+    margin: 0 3px;
+}
+.round{ 
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.head_right{ 
+    width: 50%;
+    height: 100%;
+    float: right;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.note:hover .head_right{
+    opacity: 1;
+}
+.head_right>div{ 
+    float: right;
+    line-height: 50px;
+    margin:0 10px;
+    font-size: 12px;
+}
+.function{
+    width: 20%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.note:hover .function{
+    opacity: 1;
+}
+.function .func:hover i{ 
+    cursor: pointer;
+    color: rgba(241, 181, 181, 0.538);
+}
+.function .func i{
+    color:rgba(0, 0, 0, 0.736);
+    transition: all 0.3s;
+}
+.content{ 
+    width: 100%;
+    position: relative;
+}
+.markText{ 
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+.htmlText{ 
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    top: 0;
+    display: none;
+}
