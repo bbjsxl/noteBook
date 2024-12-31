@@ -1,203 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <link rel="stylesheet" >
-    <link rel="stylesheet" href="./static/css/index.css">
+    <title>💥给你的专属烟花🎆</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+    <link rel="shortcut icon" type="image/png"
+        href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/firework-burst-icon-v2.png">
+    <link rel="icon" type="image/png"
+        href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/firework-burst-icon-v2.png">
+    <link rel="apple-touch-icon-precomposed"
+        href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/firework-burst-icon-v2.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage"
+        content="https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/firework-burst-icon-v2.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .canvas-container {
+            background-image: url("https://up.enterdesk.com/edpic/db/c9/3e/dbc93e900363616abd385c8ebb1328ec.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <script src="./js/jquery.min.js"
+        type="text/javascript"></script>
+    <script>
+        var shouci = true;
+        console.log(shouci);
+        function bodyPlayMusic() {
+            if (shouci) {
+                shouci = false;
+                audio.play();
+                console.log(shouci);
+            }
+        };
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    </script>
 </head>
+
 <body>
-    <div id="wrapper">
-        <div id="menu_left">
-            <div>index</div>
-            <div>vue</div>
-            <div>node</div>
-            <button id="openAndClose">展开</button>
+
+    <a href="https://mp.weixin.qq.com/s/USf4znnsPY1FEYJ4ffUWnA" class="hide_buttom"
+        style="position: fixed;top: 4%;right: 10px;width: 35px;height: 35px;z-index: 999;background: #696969;border-radius: 50%;padding: 1.0px;text-align: center;color: #ddd;text-decoration: none;   clear: both; line-height: 35px; 	margin:auto;   font-size: 13px;   ">代码</a>
+    <a href="https://mp.weixin.qq.com/s/USf4znnsPY1FEYJ4ffUWnA" class="hide_buttom"
+        style="position: fixed;top: 10%;right: 10px;width: 35px;height: 35px;z-index: 999;background: #696969;border-radius: 50%;padding: 1.0px;text-align: center;color: #ddd;text-decoration: none;   clear: both; line-height: 35px; 	margin:auto;   font-size: 13px;   ">制作</a>
+    <a href="https://shop1621135718.v.weidian.com/decoration/shop-category/category.html?userid=1621135718&c=147821106&isOpen=false&wfr=c&spider_token=1e2f" class="hide_buttom"
+        style="position: fixed;top: 16%;right: 10px;width: 35px;height: 35px;z-index: 999;background: #696969;border-radius: 50%;padding: 1.0px;text-align: center;color: #ddd;text-decoration: none;   clear: both; line-height: 35px; 	margin:auto;   font-size: 13px;   ">红包</a>
+    <!-- clickMusic() -->
+    <img id="music_ico" onclick="" alt="" style=" display: inline; float: right;  ">
+
+    <audio id="audioDom" src="https://sf6-cdn-tos.douyinstatic.com/obj/ies-music/7170534431801838367.mp3" preload="auto"
+        loop="loop"></audio>
+
+    <div id="yhBtn"
+        style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff ; font-size:15px">
+        <p>💥点爆</p>
+        <img style="width:64px;margin-bottom:24px "
+            src="https://p9.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/060990dac854444ab7a927b5b3311fe4~tplv-tt-shrink:640:0.image">
+
+    </div>
+
+    <!-- App -->
+    <div class="container">
+        <div class="loading-init">
+            <div class="loading-init__header"></div>
+            <div class="loading-init__status"></div>
         </div>
-        <div id="info_right"></div>
-        <div id="note_center">
-            <div class="note">
-                <div class="head">
-                    <div class="head_left">
-                        <div class="round" style="background-color:#FC625D"></div>
-                        <div class="round" style="background-color:#FDBC40"></div>
-                        <div class="round" style="background-color:#35CD4B"></div>
-                        <div class="titleNum">0</div>
-                        <div class="titleName">HTML</div>
-                    </div>
-                    <div class="head_right">
-                        <div class="author">作者</div>
-                        <div class="create_time">创建时间</div>
-                        <div class="update_time">更新时间</div>
-                    </div>
-                    <div class="function">
-                        <div class="func eye">
-                          <i class="fa fa-eye"></i>
-                        </div>
-                        <div class="func back">
-                          <i class="fa fa-angle-left"></i>
-                        </div>
-                        <div class="func file-up">
-                          <i class="fa fa-plus-square-o"></i>
-                        </div>
-                        <div class="func file-down">
-                          <i class="fa fa-plus-square"></i>
-                        </div>
-                        <div class="func move-up">
-                            <i class="fa fa-arrow-up"></i>
-                        </div>
-                        <div class="func move-down">
-                            <i class="fa fa-arrow-down"></i>
-                        </div>
-                        <div class="func delete">
-                            <i class="fa fa-trash-o"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <textarea class="markText"></textarea>
-                    <div class="htmlText"></div>
-                </div>
+        <div class="stage-container remove">
+            <div class="page_two hide">
+                <div class="type_words" id="contents"></div>
             </div>
-
-            <div class="note">
-                <div class="head">
-                    <div class="head_left">
-                        <div class="round" style="background-color:#FC625D"></div>
-                        <div class="round" style="background-color:#FDBC40"></div>
-                        <div class="round" style="background-color:#35CD4B"></div>
-                        <div class="titleNum">1</div>
-                        <div class="titleName">HTML</div>
-                    </div>
-                    <div class="head_right">
-                        <div class="author">作者</div>
-                        <div class="create_time">创建时间</div>
-                        <div class="update_time">更新时间</div>
-                    </div>
-                    <div class="function">
-                        <div class="func eye">
-                          <i class="fa fa-eye"></i>
-                        </div>
-                        <div class="func back">
-                          <i class="fa fa-angle-left"></i>
-                        </div>
-                        <div class="func file-up">
-                          <i class="fa fa-plus-square-o"></i>
-                        </div>
-                        <div class="func file-down">
-                          <i class="fa fa-plus-square"></i>
-                        </div>
-                        <div class="func move-up">
-                            <i class="fa fa-arrow-up"></i>
-                        </div>
-                        <div class="func move-down">
-                            <i class="fa fa-arrow-down"></i>
-                        </div>
-                        <div class="func delete">
-                            <i class="fa fa-trash-o"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <textarea class="markText"></textarea>
-                    <div class="htmlText"></div>
-                </div>
-            </div>
-
-            <div class="note">
-                <div class="head">
-                    <div class="head_left">
-                        <div class="round" style="background-color:#FC625D"></div>
-                        <div class="round" style="background-color:#FDBC40"></div>
-                        <div class="round" style="background-color:#35CD4B"></div>
-                        <div class="titleNum">2</div>
-                        <div class="titleName">HTML</div>
-                    </div>
-                    <div class="head_right">
-                        <div class="author">作者</div>
-                        <div class="create_time">创建时间</div>
-                        <div class="update_time">更新时间</div>
-                    </div>
-                    <div class="function">
-                        <div class="func eye">
-                          <i class="fa fa-eye"></i>
-                        </div>
-                        <div class="func back">
-                          <i class="fa fa-angle-left"></i>
-                        </div>
-                        <div class="func file-up">
-                          <i class="fa fa-plus-square-o"></i>
-                        </div>
-                        <div class="func file-down">
-                          <i class="fa fa-plus-square"></i>
-                        </div>
-                        <div class="func move-up">
-                            <i class="fa fa-arrow-up"></i>
-                        </div>
-                        <div class="func move-down">
-                            <i class="fa fa-arrow-down"></i>
-                        </div>
-                        <div class="func delete">
-                            <i class="fa fa-trash-o"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="content">
-                    <textarea class="markText"></textarea>
-                    <div class="htmlText"></div>
-                </div>
+            <div class="canvas-container">
+                <canvas id="trails-canvas"></canvas>
+                <canvas id="main-canvas"></canvas>
+                <canvas id="snow-canvas" style="opacity: 0.5;"></canvas>
+                <div id="wish_text" />
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="./static/js/index.js"></script>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-    <script >hljs.initHighlightingOnLoad();</script>  
-
-    <script>
-        let noteArr = [
-       
-            ["ADDRESS", 1, str, str, "bbjsxl", "## 地址\n\n[七个按钮分别是转换html，返回编辑，向上添加，向下添加，上移，下移，删除](www.badiu.com)"],
-            ["HTML",0 , str, str, "bbjsxl", " ```js"+"\n"+
-        "function textareExtend(markTexts) {"+"\n"+
-            "        for (let i = 0; i < markTexts.length; i++) {"+"\n"+
-                "       markTexts[i].addEventListener('input', (e) => {"+"\n"+
-                "            markTexts[i].style.height = '100px';"+"\n"+
-                "            markTexts[i].style.height = e.target.scrollHeight + 'px';"+"\n"+
-                "     contents[i].style.height = e.target.scrollHeight + 'px';"+"\n"+
-            "         });"+"\n"+
-            "      }"+"\n"+
-        "        } "+"\n"+"```"],
-            ["IMAGE",2 , str, str, "bbjsxl", "## 图片示例\n![](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F8%2F549cf5201acb9.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1667649968&t=1928b1af53e3e8e5fedfa6c73e341f98)"]
-        ]
-
-        for(let i=0;i<noteArr.length;i++) {
-            let arr = noteArr[i];
-            titleNames[i].innerHTML = arr[0];
-            titleNums[i].innerHTML = arr[1];
-            create_times[i].innerHTML = "创作时间:"+arr[2];
-            update_times[i].innerHTML = "更新时间:"+arr[3];
-            authors[i].innerHTML ="作者:" + arr[4];
-            markTexts[i].value = arr[5];
+    <!-- partial -->
+    <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript">
+        // 遇到问题微信公众号:程序员晨光 后台留言你的问题，会为你解答
+        // 或者直接加微信添加 effortPP 
+        function musicPlay(isPlay) {
+            var media = document.querySelector('#audioDom');
+            if (isPlay && media.paused) {
+                media.play();
+            }
+            if (!isPlay && !media.paused) {
+                media.pause();
+            }
         }
+        function musicInBrowserHandler() {
+            setTimeout(function () {
+                musicPlay(true)
+            }, 0)
+        }
+        document.body.addEventListener('touchstart', musicInBrowserHandler);
+        document.body.addEventListener('click', musicInBrowserHandler);
 
-        for (let i = 0; i < eyes.length; i++) {
-            markTexts[i].value.replace("\n", '<br/>');
-            htmlTexts[i].innerHTML = marked.parse(markTexts[i].value);
-            htmlTexts[i].style.display = "block";
-            hljs.initHighlightingOnLoad();
+        $('#yhBtn').click(e => {
+            $('#yhBtn').hide()
             setTimeout(() => {
-                contents[i].style.height = Math.max(markTexts[i].offsetHeight, htmlTexts[i].offsetHeight) + "px";
-                htmlTexts[i].style.height = contents[i].offsetHeight + "px";
+                start()
+                fireworks();
+            }, 3800) // 这里的5000 是5s指烟花延时时间
+            setTimeout(() => {
+                function audioAutoPlay() {
+                    var audio = document.getElementById('audioDom');
+                    audio.play();
+                }
+                audioAutoPlay();
+                wishFun(); // 想要展示祝福语--取消注释
+            }, 2000) // 这里的5000 是5s指音乐延时时间
+            console.log(updateConfig({ autoLaunch: true }));
+        })
+        function fireworks() {
+            $('.page_two').removeClass('hide');
+        }
+        // 遇到问题微信公众号:程序员晨光 后台留言你的问题，会为你解答
+        // 或者直接加微信添加 effortPP 
+        function wishFun() {
+            const wish = [
+                "2024",
+                '新年快乐',
+                "Happy New Year",
+                "财源滚滚",
+                "万事顺遂"
+            ];
+            const text = document.getElementById('wish_text');
+            text.style.height = '120px';
+            if (text.classList.contains('wish_text')) {
+                text.classList.remove("wish_text");
+            }
+            let i = -1;
+            var timer = null;
+            clearInterval(timer);
+            //开始定时器
+            timer = setInterval(() => {
+                if (Math.random() * 100 > 2) {
+                    if (i < wish.length - 1) {
+                        i += 1;
+                    } else {
+                        i = 0; // 循环播放文字打开这行注释
+                    }
+                    text.innerText = wish[i];
+                    text.style.animation = 'wish 4s infinite';
+                }
+            }, 4000);
+        }
+        function start() {
+            // 遇到问题微信公众号:程序员晨光 后台留言你的问题，会为你解答
+            // 或者直接加微信添加 effortPP 
+            var text = [
+                'ʸᵒᵘ ᵃʳᵉ ᵗʰᵉ ᵒⁿˡʸ ᵇᵉˢᵗ ᶠᵒʳ ᵐᵉ.',
+                "于我而言，你是最好且是唯一❤️",
+                "新年快乐🎆"
+            ]
+            var str = text.join('<br><br>')
+            var str_ = ''
+            var i = 0
+            var content = document.getElementById('contents')
+            var timer = setInterval(() => {
+                if (str_.length < str.length) {
+                    str_ += str[i++]
+                    content.innerHTML = '<p>' + str_ + '<span class="xx" style="opacity: 1;color: red;">❤</span></p>'                        //打印时加光标
+                } else {
+                    clearInterval(timer)
+                    content.innerHTML = '<p>' + str_ + '</p>'
+                }
             }, 100)
         }
     </script>
+    <script type="text/javascript" src="./js/other.js"></script>
+    <script type="text/javascript" src="./js/snow.js"></script>
 </body>
+
 </html>
